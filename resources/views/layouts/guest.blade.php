@@ -12,13 +12,41 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        @livewireStyles
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body>
-        <div class="font-sans text-gray-900 antialiased">
-            {{ $slot }}
+          {{-- <x-jet-banner /> --}}        
+        <div class="flex flex-col min-h-screen bg-gray-50">                                     
+           <header>
+               @livewire('navigation-menu')                
+           </header>        
+            
+            <!-- Page Heading -->   
+            {{-- @if (isset($header))
+                <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>  
+                </header>   
+            @endif   --}}
+
+            <!-- Page Content -->
+            <main class="flex-grow">        
+                {{ $slot }}
+            </main>     
+            
+            <footer>      
+                <div class="bg-white shadow py-6 px-4">
+                   footer     
+                </div>  
+            </footer>   
         </div>
+
+        @stack('modals')
+
+        @livewireScripts
     </body>
 </html>
