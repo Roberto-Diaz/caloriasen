@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Brand;
 use Illuminate\Database\Seeder;
 
 class BrandSeeder extends Seeder
@@ -13,6 +14,17 @@ class BrandSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Brand::create([
+            'name' => 'Sistema de equivalentes',
+            'status' => '1',
+        ]);
+        Brand::create([
+            'name' => 'Bimbo',
+            'status' => '1',
+        ]); 
+        Brand::create([
+            'name' => 'Skips',
+            'status' => '1',
+        ]);
     }
 }

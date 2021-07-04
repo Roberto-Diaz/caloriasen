@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Exercise;
 use Illuminate\Database\Seeder;
 
 class ExerciseSeeder extends Seeder
@@ -13,6 +14,14 @@ class ExerciseSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Exercise::create([
+            'name' => "Press de pecho"
+        ]);
+        Exercise::create([
+            'name' => "Press militar"
+        ]); 
+        Exercise::create([
+            'name' => "Sentadilla"  
+        ]);
     }
 }
