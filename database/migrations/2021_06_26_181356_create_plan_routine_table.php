@@ -22,8 +22,8 @@ class CreatePlanRoutineTable extends Migration
             $table->unsignedTinyInteger('day');        
             $table->date('date');   
             $table->timestamps();
-            $table->foreign('plan_id')->references('id')->on('plans')->onDelete('cascade');
-            $table->foreign('routine_id')->references('id')->on('routines')->onDelete('cascade');
+            $table->foreign('plan_id')->references('id')->on('plans')->onDelete('no action');   
+            $table->foreign('routine_id')->references('id')->on('routines')->onDelete('no action');
         }); 
     }
 

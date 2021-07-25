@@ -21,7 +21,7 @@ class CreateExerciseRoutineTable extends Migration
             $table->unsignedTinyInteger('sets');       
             $table->unsignedTinyInteger('interval');            
             $table->unsignedTinyInteger('weight');          
-            $table->unsignedSmallIntegerInteger('calorias_burned');       
+            $table->unsignedSmallInteger('calorias_burned');            
             $table->unsignedTinyInteger('status');                      
             $table->timestamps();   
             $table->foreign('exercise_id')->references('id')->on('exercises')->onDelete('cascade');

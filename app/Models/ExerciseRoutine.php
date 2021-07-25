@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ExerciseRoutine extends Model
 {
     use HasFactory;
+    protected $table = "exercise_routine";         
+    protected $guarded = [];        
+
 }

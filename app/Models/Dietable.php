@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PlanRoutine extends Model
+class Dietable extends Model
 {
     use HasFactory; 
-    protected $table = "plan_routine";         
-    protected $guarded = [];    
-
+    protected $guarded = []; 
+    public $timestamps = false; 
 }

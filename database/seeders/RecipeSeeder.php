@@ -21,7 +21,7 @@ class RecipeSeeder extends Seeder
         $v->slug = Str::slug($v->name);
         $v->directions = 'Mezclar bien todo lo verde';  
         $v->status = 1;
-        $v->save(); 
+        $v->save();     
         $v->foods()->attach([1,2]); 
 
         $v = new Recipe;

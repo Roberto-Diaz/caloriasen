@@ -15,8 +15,11 @@ class CreateSupplementsTable extends Migration
     {
         Schema::create('supplements', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->timestamps();
+            $table->unsignedBigInteger('brand_id');
+            $table->string('name');         
+            $table->text('description')->nullable();     
+            $table->timestamps();           
+            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');          
         });
     }
 

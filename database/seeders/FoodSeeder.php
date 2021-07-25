@@ -17,13 +17,21 @@ class FoodSeeder extends Seeder
     public function run()
     {                                                                                                                          
         //Verduras 2
-        $v = new Food;
+        $v = new Food();    
         $v->brand_id = 1;
         $v->group_id = 2;
         $v->name = 'Acelga Cruda';
         $v->slug = Str::slug($v->name);
         $v->status = 1;
-        $v->save();
+        $v->save();     
+
+        // $v = Food::create([ 
+        //     'brand_id'  => 1,
+        //     'group_id'  => 2,
+        //     'name'      => 'Acelga Cruda',
+        //     'slug'      => Str::slug("Acelga Cruda"),
+        //     'status'    => 1    
+        // ]); 
         Nutrient::create([
             'nutrientable_id'   => $v->id,
             'nutrientable_type' => Food::class,
@@ -38,7 +46,7 @@ class FoodSeeder extends Seeder
             'saturated_fat' => '0',      
             'cholesterol'   => '0',
             'carbohydrate'  => '4.3',
-            'fiver'         => '3.6',
+            'fiber'         => '3.6',
             'sugars'        => '0',
             'added_sugars'  => '0',
             'sodium'        => '0',
@@ -48,16 +56,23 @@ class FoodSeeder extends Seeder
             'vitamins'      => '{"a":"310.9","b":"14.8","c":"29.5","ig":"64.0","cg":"2.7"}',    
         ]);
 
-        $v = new Food;
-        $v->brand_id = 1;
-        $v->group_id = 2;
-        $v->name = 'Acelga picada cocida';  
-        $v->slug = Str::slug($v->name);
-        $v->status = 1;
-        $v->save(); 
+        $v2 = new Food;   
+        $v2->brand_id = 1;
+        $v2->group_id = 2;
+        $v2->name = 'Acelga picada cocida';  
+        $v2->slug = Str::slug($v2->name);
+        $v2->status = 1;
+        $v2->save();        
+        // $v2 = Food::create([
+        //     'brand_id'  => 1,   
+        //     'group_id'  => 2,
+        //     'name'      => 'Acelga picada cocida',
+        //     'slug'      => Str::slug("Acelga picada cocida"),
+        //     'status'    => 1
+        // ]);
 
         Nutrient::create([  
-            'nutrientable_id'   => $v->id,
+            'nutrientable_id'   => $v2->id,
             'nutrientable_type' => Food::class,
             'unit_id'       => 3,  
             'suggestion'    => '1/2',
@@ -70,7 +85,7 @@ class FoodSeeder extends Seeder
             'saturated_fat' => '0',      
             'cholesterol'   => '0',
             'carbohydrate'  => '3.9',
-            'fiver'         => '2.1',
+            'fiber'         => '2.1',
             'sugars'        => '0',
             'added_sugars'  => '0',
             'sodium'        => '0',

@@ -20,7 +20,7 @@ class CreateDietablesTable extends Migration
             $table->string('dietable_type');            
             $table->unsignedTinyInteger('meal');                                           
             $table->foreign('diet_id')->references('id')->on('diets')->onDelete('cascade');          
-        }); 
+        });     
     }
 
     /**

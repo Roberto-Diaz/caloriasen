@@ -23,7 +23,7 @@ class CreateFoodsTable extends Migration
             $table->timestamps();       
             $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');                                    
             $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');                                          
-        }); 
+        });     
     }
 
     /**

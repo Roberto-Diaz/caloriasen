@@ -26,5 +26,9 @@ class BrandSeeder extends Seeder
             'name' => 'Skips',
             'status' => '1',
         ]);
+        Brand::create([
+            'name' => 'C4', 
+            'status' => '2',
+        ]);
     }
 }

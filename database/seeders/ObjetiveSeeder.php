@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Objetive;
 use Illuminate\Database\Seeder;
 
 class ObjetiveSeeder extends Seeder
@@ -13,6 +14,17 @@ class ObjetiveSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Objetive::create([
+            'name'  => "Subir masa muscular",
+            'status'    => 1
+        ]); 
+        Objetive::create([
+            'name'  => "Definición",
+            'status'    => 1
+        ]); 
+        Objetive::create([  
+            'name'  => "Mantenimiento",
+            'status'    => 1
+        ]);
     }
 }

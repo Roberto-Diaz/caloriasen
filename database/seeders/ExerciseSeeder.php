@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Exercise;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 
 class ExerciseSeeder extends Seeder
@@ -15,13 +16,16 @@ class ExerciseSeeder extends Seeder
     public function run()
     {
         Exercise::create([
-            'name' => "Press de pecho"
+            'name'  => "Press de pecho",
+            'slug'  => Str::slug("Press de pecho")
         ]);
         Exercise::create([
-            'name' => "Press militar"
+            'name' => "Press militar",
+            'slug'  => Str::slug("Press militar")
         ]); 
         Exercise::create([
-            'name' => "Sentadilla"  
+            'name' => "Sentadilla", 
+            'slug'  => Str::slug("Sentadilla") 
         ]);
     }
 }

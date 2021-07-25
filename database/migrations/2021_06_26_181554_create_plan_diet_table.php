@@ -19,10 +19,10 @@ class CreatePlanDietTable extends Migration
             $table->unsignedBigInteger('diet_id');
             $table->dateTime('date_start');
             $table->dateTime('date_end');
-            $table->unsignedTinyInteger('status');          
+            $table->unsignedTinyInteger('status');                  
             $table->timestamps();
-            $table->foreign('plan_id')->references('id')->on('plans')->onDelete('cascade');
-            $table->foreign('diet_id')->references('id')->on('diets')->onDelete('cascade');         
+            $table->foreign('plan_id')->references('id')->on('plans')->onDelete('no action');
+            $table->foreign('diet_id')->references('id')->on('diets')->onDelete('no action');         
         });
     }
 
