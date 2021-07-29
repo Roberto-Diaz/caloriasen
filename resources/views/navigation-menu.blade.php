@@ -5,12 +5,12 @@ $navLinks = [
         'route'  => route('dashboard'),
         'active' => request()->routeIs('dashboard')
     ],
-    [
-        'name'   => 'Prueba',
-        'route'  => '#',    
-        'active' => false
+    [   
+        'name'   => 'Blog',
+        'route'  => route('blog'),      
+        'active' => request()->routeIs('blog')
     ]
-];
+];  
         
 @endphp
 
