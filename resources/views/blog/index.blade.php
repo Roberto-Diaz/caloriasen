@@ -14,7 +14,7 @@
                                 </svg>
                                 {{ $post->category->name}}
                             </a>
-                        </div>           
+                        </div>              
                         <div>       
                             <h2 class="font-black text-center text-2xl hover:text-indigo-900">{{ $post->title }}</h2>                    
                             <p class="text-justify px-2 line-clamp-5">{{ $post->extract}}</p>                            
@@ -32,5 +32,5 @@
                 </div>                      
             </aside>
         </div>                      
-    </div>              
+    </div>                  
 </x-guest-layout>

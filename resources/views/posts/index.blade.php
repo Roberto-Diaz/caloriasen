@@ -1,31 +1,31 @@
-<x-guest-layout>
-    <div class="py-12 container bg-transparent">    
-        <table class="table-fixed">
-            <thead> 
-              <tr>
-                <th class="w-1/2 ...">Title</th>
-                <th class="w-1/4 ...">Author</th>
-                <th class="w-1/4 ...">Views</th>
+<x-app-layout>
+    <div class="py-12 container bg-transparent">   
+      <div class="shadow-lg border-indigo-200">
+        <table class="table-fixed rounded">          
+            <thead class="bg-indigo-300 text-gray-700 uppercase">     
+              <tr>           
+                <th class="p-2">Categoria</th>  
+                <th class="p-2">Titulo</th>     
+                <th class="p-2">Estatus</th>      
+                <th class="p-2">Extracto</th>
+                <th class="p-2">Acciones</th>
               </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Intro to CSS</td>
-                <td>Adam</td>
-                <td>858</td>
-              </tr>
-              <tr class="bg-blue-200">
-                <td>A Long and Winding Tour of the History of UI Frameworks and Tools and the Impact on Design</td>
-                <td>Adam</td>
-                <td>112</td>
-              </tr>
-              <tr>
-                <td>Intro to JavaScript</td>
-                <td>Chris</td>
-                <td>1,280</td>
-              </tr>
+            </thead>    
+            <tbody class=" divide-y divide-gray-300">
+              @foreach ($posts as $post)
+                <tr>  
+                  <td class="p-2">{{ $post->category->name}}</td>
+                  <td class="p-2">{{ $post->title}}</td>
+                  <td class="p-2">{{ $post->status}}</td>
+                  <td class="p-2">{{ $post->extract}}</td>  
+                  <td>
+                    funciones
+                  </td>
+                </tr>                   
+              @endforeach     
             </tbody>
           </table>                 
-    </div>              
-    </x-guest-layout>
+      </div> 
+    </div>               
+  </x-app-layout>
     

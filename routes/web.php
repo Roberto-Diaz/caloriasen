@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,11 +23,15 @@ Route::middleware(['auth:sanctum', 'verified', 'roles:admin'])->get('/dashboard'
     return view('dashboard');   
 })->name('dashboard');
 
-Route::name('admin.')->middleware(['auth', 'roles:admin'])->group(function () {                 
-    Route::get('/blog/crear', [PostController::class, 'create'])->name('blog.create');                                            
-});     
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'roles:admin'])->group(function () {                 
+    Route::get('/publicaciones', [PostController::class, 'index'])->name('index.post');                                            
+    // Route::get('/crear/publicacion', [PostController::class, 'create'])->name('create.post');                                            
+    // Route::post('/registar/publicacion', [PostController::class, 'store'])->name('store.post');                                            
+    // Route::get('/editar/publicacion', [PostController::class, 'edit'])->name('edit.post');                                            
+    // Route::post('/actualizar/publicacion', [PostController::class, 'update'])->name('update.post');                                            
+    // Route::post('/autorizar/publicacion', [PostController::class, 'authorize'])->name('authorize.post');                                            
+});                     
 
-Route::get('/blog', [PostController::class, 'getPosts'])->name('blog');                                                  
-// Route::group(function () {               
-// });          
-    
+        
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');                                                                                    
+// Route::get('/blog/{blog:slug}', [PostController::class, 'show'])->name('show.post');                                                         
