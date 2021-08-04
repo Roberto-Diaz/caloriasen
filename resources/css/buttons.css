@@ -1,13 +1,21 @@
 .btn {
-    @apply font-bold py-2 px-4 rounded;
+    @apply font-bold py-2 px-4 rounded focus:outline-none;
 }
 
 .btn-primary {
-    @apply bg-blue-800 text-white;
+    @apply bg-indigo-800 text-white;
 }
 
 .btn-primary:hover {
-    @apply bg-blue-900;
+    @apply bg-indigo-900;
+}   
+
+.btn-info {
+    @apply bg-blue-500 text-white;
+}
+
+.btn-info:hover {
+    @apply bg-blue-700; 
 }
 
 .btn-danger {
@@ -27,9 +35,9 @@
 }
 
 .btn-secondary {
-    @apply bg-gray-800 text-white;
-}
+    @apply bg-gray-500 text-white;
+}   
 
 .btn-secondary:hover {
-    @apply bg-gray-900;
+    @apply bg-gray-600;
 }
