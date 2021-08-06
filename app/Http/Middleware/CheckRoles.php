@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CheckRoles
 {
@@ -15,10 +16,14 @@ class CheckRoles
      * @return mixed
      */
     public function handle(Request $request, Closure $next, ...$roles)
-    {
-        if(auth()->user()->hasRoles($roles)){                   
-            return $next($request);
-        }           
-        return redirect('/');                       
+    {     
+        if(Auth::check()){
+            if(auth()->user()->hasRoles($roles)){                   
+                return $next($request);
+            }                           
+            return abort(404, 'Pagina no encontrada');                      
+        }else{  
+            return abort(404, 'Pagina no encontrada');
+        }
     }
 }

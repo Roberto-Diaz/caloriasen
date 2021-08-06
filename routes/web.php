@@ -19,11 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');       
 
-Route::middleware(['auth:sanctum', 'verified', 'roles:admin'])->get('/dashboard', function () {
-    return view('dashboard');   
+Route::middleware(['roles:admin'])->get('/dashboard', function () {
+    return view('dashboard');       
 })->name('dashboard');
 
-Route::prefix('admin')->name('admin.')->middleware(['auth', 'roles:admin'])->group(function () {                 
+Route::prefix('admin')->name('admin.')->middleware(['roles:admin'])->group(function () {                      
     Route::get('/publicaciones', [PostController::class, 'index'])->name('index.post');                                            
     // Route::get('/crear/publicacion', [PostController::class, 'create'])->name('create.post');                                            
     // Route::post('/registar/publicacion', [PostController::class, 'store'])->name('store.post');                                            
@@ -32,6 +32,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'roles:admin'])->gro
     // Route::post('/autorizar/publicacion', [PostController::class, 'authorize'])->name('authorize.post');                                            
 });                     
 
-        
+            
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');                                                                                    
 // Route::get('/blog/{blog:slug}', [PostController::class, 'show'])->name('show.post');                                                         
