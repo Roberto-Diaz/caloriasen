@@ -8,16 +8,16 @@
 
 
 :root { 
-    --color-aguacate-50: #e3e9d6;
-    --color-aguacate-100: #c8d4ae;
-    --color-aguacate-200: #acbf87;
-    --color-aguacate-300: #90aa60;
-    --color-aguacate-400: #749639;
-    --color-aguacate-500: #568203;
-    --color-aguacate-600: #486b0b;
-    --color-aguacate-700: #3b550f;  
-    --color-aguacate-800: #2e400f;  
-    --color-aguacate-900: #222c0e;
+    --color-sangre-50: #FEF2F2;
+    --color-sangre-100: #f2d7d0;
+    --color-sangre-200: #FECACA;
+    --color-sangre-300: #FCA5A5;
+    --color-sangre-400: #F87171;    
+    --color-sangre-500: #EF4444;    
+    --color-sangre-600: #8A0303;
+    --color-sangre-700: #6C0000;  
+    --color-sangre-800: #4E0000;  
+    --color-sangre-900: #330002;
   } 
 
 

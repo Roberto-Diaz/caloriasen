@@ -27,9 +27,9 @@ $navLinks = [
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-0 sm:-my-px sm:ml-10 sm:flex">
                     @foreach ($navLinks as $navLink)
-                        <x-jet-nav-link href="{{ $navLink['route'] }}" :active="$navLink['active']" class="font-black"> 
+                        <x-jet-nav-link href="{{ $navLink['route'] }}" :active="$navLink['active']"> 
                             {{ $navLink['name']}}
                         </x-jet-nav-link>                        
                     @endforeach
