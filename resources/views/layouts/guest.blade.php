@@ -36,12 +36,12 @@
             <!-- Page Content -->
             <main class="flex-grow">        
                 {{ $slot }}
-            </main>     
+            </main>         
             
             <footer>      
                 <div class="bg-white shadow py-6 px-4">
                    footer     
-                </div>  
+                </div>      
             </footer>   
         </div>
 

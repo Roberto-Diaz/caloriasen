@@ -15,8 +15,8 @@ $navLinks = [
 @endphp
 
 <nav x-data="{ open: false }" class="sticky top-0 bg-white border-b border-gray-100">
-    <!-- Primary Navigation Menu -->            
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Primary Navigation Menu -->                    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">    
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
@@ -29,7 +29,7 @@ $navLinks = [
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     @foreach ($navLinks as $navLink)
-                        <x-jet-nav-link href="{{ $navLink['route'] }}" :active="$navLink['active']">
+                        <x-jet-nav-link href="{{ $navLink['route'] }}" :active="$navLink['active']" class="font-black"> 
                             {{ $navLink['name']}}
                         </x-jet-nav-link>                        
                     @endforeach

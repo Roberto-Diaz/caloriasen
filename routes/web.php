@@ -25,6 +25,7 @@ Route::middleware(['roles:admin'])->get('/dashboard', function () {
 
 Route::prefix('admin')->name('admin.')->middleware(['roles:admin'])->group(function () {                      
     Route::get('/publicaciones', [PostController::class, 'index'])->name('index.post');                                            
+    Route::get('/publicaciones/agregar', [PostController::class, 'create'])->name('create.post');                                                        
     // Route::get('/crear/publicacion', [PostController::class, 'create'])->name('create.post');                                            
     // Route::post('/registar/publicacion', [PostController::class, 'store'])->name('store.post');                                            
     // Route::get('/editar/publicacion', [PostController::class, 'edit'])->name('edit.post');                                            
