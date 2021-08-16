@@ -1,15 +1,15 @@
 <x-app-layout>
 
-  <div class="card">
+  <div class="card  w-full">
     <div class="card-header">
       <div class="flex justify-between">        
         <h1>Listado de Publicaciones</h1>       
-        <a href="{{route('admin.create.post')}}" class="btn btn-secondary">Agregar</a>  
+        <a href="{{route('admin.post.create')}}" class="btn btn-secondary">Agregar</a>  
       </div>      
     </div>    
     <div class="card-body"> 
       <div class="overflow-x-auto border-gray-500">  
-        <table class="table-fixed rounded">          
+        <table class="table-fixed rounded min-w-full">           
             <thead class="bg-gray-500 text-white uppercase">     
               <tr>            
                 <th class="p-2">Categoría</th>    
@@ -27,17 +27,19 @@
                   <td class="p-2">
                     @if ($post->status ==1)
                       <span class="bg-green-300 rounded-full px-2">Activo</span>
-                    @else   
+                    @elseif($post->status ==3)
+                      <span class="bg-yellow-300 rounded-full px-2">Publicado</span>
+                    @else 
                       <span class="bg-red-300 rounded-full px-2">Inactivo</span>
                     @endif  
                   </td>
                   <td class="p-2 text-justify">{{ $post->extract}}</td>     
                   <td class="p-2">          
-                    <div class="flex space-x-2 p-2">
-                      <button type="button" class="btn btn-info">Detalle</button>     
-                      <button type="button" class="btn btn-primary">Editar</button> 
-                      <button type="button" class="btn btn-danger">Eliminar</button>  
-                    </div>
+                    <div class="flex space-x-2 p-2">  
+                      <button type="button" class="btn btn-info">Detalle</button>         
+                      <a type="button" href="{{ route('admin.post.edit',$post) }}" class="btn btn-primary">Editar</a>    
+                      <button type="button" class="btn btn-danger">Eliminar</button>    
+                    </div>      
                   </td>   
                 </tr>  
               @empty  

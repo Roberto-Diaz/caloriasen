@@ -14,7 +14,7 @@ class BlogController extends Controller
      */
     public function index()
     {       
-        $posts = Post::all();                       
+        $posts = Post::where('status',3)->orderBy('updated_at')->get();                   
         return view('blog.index', compact('posts'));
     }
 

@@ -18,11 +18,10 @@ class CreatePostsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedInteger('category_id'); 
             $table->string('title');
-            $table->string('slug')->unique(); 
-            $table->string('subtitle');
+            $table->string('slug')->unique();       
             $table->text('extract');  
             $table->text('body');   
-            $table->enum('status',[1,2,3])->default(1);
+            $table->enum('status',[1,2,3])->default(1);        
             $table->timestamps();   
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');

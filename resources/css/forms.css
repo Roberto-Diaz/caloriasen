@@ -1,21 +1,21 @@
 .form-group{
-    @apply mb-6;
+    @apply mb-2;    
 }
 
 .form-label{
-    @apply block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2;
+    @apply  block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2;
 }
-    
+
 .form-control{
-    @apply appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-600;
-}
+    @apply appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-black  focus:ring-black focus:ring-offset-black;           
+}   
 
 .form-select{
-    @apply appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-600;
-}
+    @apply appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-black focus:ring-black focus:ring-offset-black;     
+}   
 
 .is-invalid{
-    @apply border-red-600 focus:border-red-600;
+    @apply border-sangre-600 focus:border-sangre-600;           
 }
     
 .form-text{

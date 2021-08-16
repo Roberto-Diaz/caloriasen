@@ -17,6 +17,7 @@
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+        @stack('styles')
     </head>
     <body class="font-sans antialiased">
         {{-- <x-jet-banner /> --}}
@@ -34,13 +35,13 @@
             @endif          
 
             <!-- Page Content -->   
-            <main class="flex-grow">        
+            <main class="flex justify-center">              
                 {{ $slot }}
-            </main>
+            </main> 
         </div>
 
         @stack('modals')
-
+        @stack('scripts')   
         @livewireScripts
     </body>
 </html>
